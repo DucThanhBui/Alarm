@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="black_900_7f">#7f000000</color>
+    <color name="white_A700_7f">#7fffffff</color>
+    <color name="lime_200">#d8eba4</color>
+    <color name="gray_500">#c4a68a</color>
+    <color name="gray_901">#202429</color>
+    <color name="gray_902">#0d1d2a</color>
+    <color name="white_A700_d8">#d8ffffff</color>
+    <color name="gray_900">#1a1c1e</color>
+    <color name="black_900_3f">#3f000000</color>
+    <color name="orange_200">#ffb86c</color>
+    <color name="bluegray_900">#232a30</color>
+    <color name="bluegray_800">#42474e</color>
+    <color name="white_A700_99">#99ffffff</color>
+    <color name="orange_50">#ffe9d1</color>
+    <color name="black_900">#000000</color>
+    <color name="white_A700_bf">#bfffffff</color>
+    <color name="bluegray_300">#9dadbe</color>
+    <color name="blue_100">#cce5ff</color>
+    <color name="gray_903">#1f1b17</color>
+    <color name="blue_200">#93ccff</color>
+    <color name="gray_904">#31271e</color>
+    <color name="white_A700">#ffffff</color>
+</resources>

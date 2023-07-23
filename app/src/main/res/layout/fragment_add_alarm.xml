@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".fragment.AddAlarmFragment"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/topAppBarAddAlarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:id="@+id/alarmSave"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/baseline_check_24"
+                        android:backgroundTint="@color/design_default_color_on_primary"
+                        android:layout_gravity="end" />
+
+                    <LinearLayout
+                        android:layout_width="240dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="25sp"
+                            android:textAlignment="center"
+                            tools:text="Title" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/alarmItemStatus"
+                            android:textAlignment="center"
+                            tools:text="Tat"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/design_default_color_on_primary"
+                        android:src="@drawable/baseline_cancel_24"
+                        android:layout_gravity="start"
+                        android:id="@+id/alarmCancel" />
+                </com.google.android.material.appbar.MaterialToolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <TimePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"
+                android:id="@+id/time_picker_alarm" />
+
+            <LinearLayout
+                android:id="@+id/alarmSoundContainer"
+                style="@style/groupStyle_901cornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/_7pxh"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhac chuong"
+                    style="@style/txtRubikregular22"
+                    android:padding="@dimen/_10pxh"
+                    android:layout_weight="1"
+                    tools:text="Nhac chuong" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/txtRubikregular22"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:id="@+id/alarmSound"
+                    android:textAlignment="textEnd"
+                    android:paddingHorizontal="@dimen/_10pxh"
+                    android:text="Mac dinh"
+                    tools:text="Mac dinh" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/alarmRepeatContainer"
+                style="@style/groupStyle_901cornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/_7pxh"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lap lai"
+                    style="@style/txtRubikregular22"
+                    android:padding="@dimen/_10pxh"
+                    android:layout_weight="1"
+                    tools:text="Lap lai" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/txtRubikregular22"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:id="@+id/alarmRepeat"
+                    android:textAlignment="textEnd"
+                    android:paddingHorizontal="@dimen/_10pxh"
+                    tools:text="Mot lan" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/alarmVibrateContainer"
+                style="@style/groupStyle_901cornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/_7pxh"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rung khi bao thuc"
+                    style="@style/txtRubikregular22"
+                    android:padding="@dimen/_10pxh"
+                    android:layout_weight="1"
+                    tools:text="Rung khi bao thuc" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:layout_width="wrap_content"
+                    app:thumbTint="@color/light_blue_900"
+                    android:checked="true"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:id="@+id/alarmVibrateCheck"
+                    android:paddingHorizontal="@dimen/_10pxh" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/alarmDeleteContainer"
+                style="@style/groupStyle_901cornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/_7pxh"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rung khi bao thuc"
+                    style="@style/txtRubikregular22"
+                    android:padding="@dimen/_10pxh"
+                    android:layout_weight="1"
+                    tools:text="Xoa sau khi da bao thuc" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:layout_width="wrap_content"
+                    app:thumbTint="@color/light_blue_900"
+                    android:checked="true"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:id="@+id/alarmDeleteCheck"
+                    android:paddingHorizontal="@dimen/_10pxh" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/alarmContentContainer"
+                style="@style/groupStyle_901cornerRadius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_margin="@dimen/_7pxh"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nhan"
+                    style="@style/txtRubikregular22"
+                    android:padding="@dimen/_10pxh"
+                    android:layout_weight="1"
+                    tools:text="Lap lai" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    style="@style/txtRubikregular22"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:id="@+id/alarmContent"
+                    android:textAlignment="textEnd"
+                    android:paddingHorizontal="@dimen/_10pxh"
+                    tools:text="Khong co nhan" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

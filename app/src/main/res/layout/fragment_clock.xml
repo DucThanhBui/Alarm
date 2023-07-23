@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.alarmapp.viewmodel.ShareViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragment.ClockFragment">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+        <TextClock
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:textSize="150sp"
+            tools:text="10:20"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+</layout>
