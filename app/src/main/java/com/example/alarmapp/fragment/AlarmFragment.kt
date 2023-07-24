@@ -65,7 +65,7 @@ class AlarmFragment : Fragment() {
         }
 
         binding.btAddAlarm.setOnClickListener {
-            ///\view.findNavController().navigate(R.id.action_alarmFragment_to_addAlarmFragment)
+           navController.navigate(R.id.action_alarmFragment_to_addAlarmFragment)
         }
         binding.rvAlarmList.layoutManager = LinearLayoutManager(this.context)
     }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/alarm_app_nav"
-    app:startDestination="@id/viewPagerFragment">
+    app:startDestination="@id/alarmFragment">
 
     <fragment
         android:id="@+id/alarmFragment"
@@ -28,8 +28,14 @@
         android:name="com.example.alarmapp.fragment.ViewPagerFragment"
         android:label="ViewPagerFragment" >
         <action
-            android:id="@+id/action_viewPagerFragment_to_addAlarmFragment"
-            app:destination="@id/addAlarmFragment" />
+            android:id="@+id/action_viewPagerFragment_to_alarmFragment"
+            app:destination="@id/alarmFragment" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_timerFragment"
+            app:destination="@id/timerFragment" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_stopWatchFragment"
+            app:destination="@id/stopWatchFragment" />
     </fragment>
     <fragment
         android:id="@+id/addAlarmFragment"
