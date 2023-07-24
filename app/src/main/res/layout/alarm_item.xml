@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:layout_margin="20dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -29,11 +30,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_2pxv"
-                android:layout_weight="0.86"
+                android:layout_weight="3"
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text=""
                 tools:text="@string/lbl_6_30_am" />
+
+            <TextView
+                android:id="@+id/alarmContent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                style="@style/txtRubikregular20"
+                tools:text="Sang day di hoc"
+                android:maxLines="2" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,7 +60,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txtNotscheduled"
+                android:id="@+id/txtScheduled"
                 style="@style/txtRubikregular12"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -60,7 +73,7 @@
                 tools:text="Not Scheduled" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switchMaterialGroupThree"
+                android:id="@+id/isAlarmOn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_181pxh"

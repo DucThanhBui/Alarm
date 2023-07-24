@@ -65,13 +65,13 @@ class AddAlarmFragment : Fragment() {
             vibrate = binding.alarmVibrateCheck.isChecked,
             repeat = "Mot lan",
             delete = binding.alarmDeleteCheck.isChecked,
-            content = "Mac dinh"
+            content = "Mac dinh",
+            enable = true,
         )
-        //backToAlarmScreen()
+        backToAlarmScreen()
     }
 
     private fun backToAlarmScreen() {
-        val action = AddAlarmFragmentDirections.actionAddAlarmFragmentToAlarmFragment()
-        findNavController().navigate(action)
+        findNavController().popBackStack()
     }
 }

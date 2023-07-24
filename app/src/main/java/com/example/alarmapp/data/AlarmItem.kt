@@ -12,5 +12,6 @@ data class AlarmItem (
     val isVibrate: Boolean,
     val isRepeat: String,
     val deleteAfterTrigger: Boolean,
-    val content: String
+    val content: String,
+    val isEnable: Boolean,
 )
