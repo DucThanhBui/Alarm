@@ -64,7 +64,7 @@ class TimerFragment : Fragment() {
         var hour = 0
         var min = 0
         var sec = 0
-        var counterTimer = CounterTimer(hour, min, sec, binding.tvTimer)
+        var counterTimer = CounterTimer(hour, min, sec, binding.tvTimer, this)
 
         binding.btStartTimer.setOnClickListener {
             binding.npHour.visibility = View.INVISIBLE
@@ -80,7 +80,7 @@ class TimerFragment : Fragment() {
             min = binding.npMin.value
             sec = binding.npSec.value
 
-            counterTimer = CounterTimer(hour, min, sec, binding.tvTimer)
+            counterTimer = CounterTimer(hour, min, sec, binding.tvTimer, this)
             binding.tvTimer.text = counterTimer.timeInText(hour, min, sec)
             counterTimer.startCountDown()
         }
@@ -103,15 +103,19 @@ class TimerFragment : Fragment() {
 
         binding.btStopTimer.setOnClickListener {
             counterTimer.stopCountDown()
-            binding.tvTimer.visibility = View.INVISIBLE
-            binding.btPauseTimer.visibility = View.INVISIBLE
-            binding.btStopTimer.visibility = View.INVISIBLE
-
-            binding.npHour.visibility = View.VISIBLE
-            binding.npMin.visibility = View.VISIBLE
-            binding.npSec.visibility = View.VISIBLE
-            binding.btStartTimer.visibility = View.VISIBLE
+            startState()
         }
+    }
+
+    fun startState() {
+        binding.tvTimer.visibility = View.INVISIBLE
+        binding.btPauseTimer.visibility = View.INVISIBLE
+        binding.btStopTimer.visibility = View.INVISIBLE
+
+        binding.npHour.visibility = View.VISIBLE
+        binding.npMin.visibility = View.VISIBLE
+        binding.npSec.visibility = View.VISIBLE
+        binding.btStartTimer.visibility = View.VISIBLE
     }
 
     fun pause() {

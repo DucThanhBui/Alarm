@@ -3,10 +3,15 @@ package com.example.alarmapp.counter
 import android.os.Looper
 import android.widget.TextView
 import android.os.Handler
+import com.example.alarmapp.databinding.FragmentTimerBinding
+import com.example.alarmapp.fragment.TimerFragment
 
-class CounterTimer (private val hour: Int, private val min: Int, private val sec: Int, private val counter_text: TextView) {
+class CounterTimer (
+    private val hour: Int, private val min: Int, private val sec: Int,
+    private val counter_text: TextView,
+    private val frg: TimerFragment) {
 
-    var number = hour * 60 * 60 + min * 60 + sec
+    private var number = hour * 60 * 60 + min * 60 + sec
     var h = hour
     var m = min
     var s = sec
@@ -41,6 +46,7 @@ class CounterTimer (private val hour: Int, private val min: Int, private val sec
 
     fun stopCountDown() {
         handler.removeCallbacks(runnable)
+        frg.startState()
     }
 
     private fun convertDigit(digit: Int) = if (digit < 10) "0$digit" else "$digit"

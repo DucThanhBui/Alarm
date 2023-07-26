@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.coroutineScope
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alarmapp.AlarmApplication
@@ -33,7 +31,9 @@ class AlarmFragment : Fragment() {
     private val viewModel: ShareViewModel by activityViewModels {
         ShareViewModelFactory(
             (activity?.application as AlarmApplication).alarmDatabase
-                .itemDao()
+                .itemDao(),
+            (activity?.application as AlarmApplication).alarmDatabase
+                .stopwatchDao()
         )
     }
 
@@ -72,6 +72,7 @@ class AlarmFragment : Fragment() {
             true
         }
         recycleView.adapter = alarmAdapter
+
         lifecycle.coroutineScope.launch {
             viewModel.getAllItems().collect() {
                 alarmAdapter.submitList(it)

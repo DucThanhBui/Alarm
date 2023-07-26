@@ -5,9 +5,9 @@
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
 
-    <string name="alarm_delete">Xoa bao thuc nay</string>
-    <string name="alarm_delete_confp">Xac nhan</string>
-    <string name="alarm_delete_confn">Huy bo</string>
+    <string name="alarm_delete">Xoá báo thức này</string>
+    <string name="alarm_delete_confp">Xác nhận</string>
+    <string name="alarm_delete_confn">Hủy</string>
 
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>

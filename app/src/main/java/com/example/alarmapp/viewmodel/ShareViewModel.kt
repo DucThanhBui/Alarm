@@ -1,16 +1,13 @@
 package com.example.alarmapp.viewmodel
 
-import android.content.ClipData
-import android.provider.SyncStateContract.Helpers.update
-import android.widget.TextClock
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.alarmapp.data.AlarmItem
 import com.example.alarmapp.data.AlarmItemDao
-import com.example.alarmapp.fragment.AddAlarmFragment
+import com.example.alarmapp.data.StopwatchDao
+import com.example.alarmapp.data.StopwatchItem
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
@@ -19,7 +16,22 @@ import kotlinx.coroutines.launch
  * View Model to keep a reference to the Inventory repository and an up-to-date list of all items.
  *
  */
-class ShareViewModel(private val alarmDao: AlarmItemDao) : ViewModel() {
+class ShareViewModel(
+    private val alarmDao: AlarmItemDao,
+    private val stopwatchDao: StopwatchDao
+    ) : ViewModel() {
+
+    fun getAllStopwatchItems(): Flow<List<StopwatchItem>> = stopwatchDao.getAllStopwatch()
+
+    fun addStopwatch(item: StopwatchItem) = viewModelScope.launch {
+        stopwatchDao.insert(item)
+    }
+
+    fun deleteAllStopwatchHistory() {
+        viewModelScope.launch {
+            stopwatchDao.deleteAll()
+        }
+    }
 
     /**
      * Inserts the new Item into database.
@@ -72,11 +84,14 @@ class ShareViewModel(private val alarmDao: AlarmItemDao) : ViewModel() {
 /**
  * Factory class to instantiate the [ViewModel] instance.
  */
-class ShareViewModelFactory(private val alarmDao: AlarmItemDao) : ViewModelProvider.Factory {
+class ShareViewModelFactory(
+    private val alarmDao: AlarmItemDao,
+    private val stopwatchDao: StopwatchDao
+    ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ShareViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return ShareViewModel(alarmDao) as T
+            return ShareViewModel(alarmDao, stopwatchDao) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

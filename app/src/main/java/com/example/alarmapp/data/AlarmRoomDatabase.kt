@@ -6,13 +6,14 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [AlarmItem::class],
-    version = 2,
+    entities = [AlarmItem::class, StopwatchItem::class],
+    version = 3,
     exportSchema = false
 )
 abstract class AlarmRoomDatabase : RoomDatabase() {
 
     abstract fun itemDao(): AlarmItemDao
+    abstract fun stopwatchDao(): StopwatchDao
 
     companion object {
         @Volatile
