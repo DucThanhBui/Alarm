@@ -41,6 +41,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:layout_marginTop="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -126,8 +127,8 @@
                     android:id="@+id/alarmRepeat"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="@dimen/_10pxh"
-                    tools:text="@string/one_time"
-                    android:text="@string/one_time"/>
+                    tools:text="@string/everyday"
+                    android:text="@string/everyday"/>
             </LinearLayout>
 
             <LinearLayout

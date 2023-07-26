@@ -74,28 +74,31 @@ class AddAlarmFragment : Fragment() {
             set(Calendar.SECOND, 0)
         }
 
-// setRepeating() lets you specify a precise custom interval--in this case,
-// 20 minutes.
-
 
         ////
 
         val id = arguments?.getString(AlarmFragment.ITEM_ID)?.toInt()
-        //Log.d("Hello", "id = $id")
 
         if (id != null) {
             viewModel.retrieveItem(id).asLiveData().observe(this.viewLifecycleOwner) { selectedItem ->
-                //Log.d("Sua", "data moi")
                 item = selectedItem
+                binding.alarmSound.text = selectedItem.sound
+                binding.timePickerAlarm.hour = item.time.split(" : ")[0].toInt()
+                binding.timePickerAlarm.minute = item.time.split(" : ")[1].toInt()
+                binding.alarmSound.text = item.sound
+                binding.alarmRepeat.text = item.isRepeat
+                binding.alarmVibrateCheck.isChecked = item.isVibrate
+                binding.alarmDeleteCheck.isChecked = item.deleteAfterTrigger
+                binding.alarmContent.setText(item.content)
                 update(item)
             }
         } else {
             binding.alarmSave.setOnClickListener {
                 viewModel.addNewAlarm(getCurrentAlarmInfo())
 //                sc.schedule(getCurrentAlarmInfo())
-                alarmManager.set (
+                alarmManager.setExact (
                     AlarmManager.RTC_WAKEUP,
-                    System.currentTimeMillis() + 60 * 1000,
+                    System.currentTimeMillis() + 10 * 1000,
                     pendingIntent
                 )
                 Log.d("schedule", "start")

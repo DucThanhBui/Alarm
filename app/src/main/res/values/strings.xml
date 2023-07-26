@@ -31,4 +31,5 @@
     <string name="delete_after_alarm_trigger">Xóa sau khi đã báo thức</string>
     <string name="content">Nội dung</string>
     <string name="alarm_setting">Cài đặt báo thức</string>
+    <string name="everyday">Hàng ngày</string>
 </resources>

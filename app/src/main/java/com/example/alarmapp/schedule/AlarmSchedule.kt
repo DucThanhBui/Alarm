@@ -10,6 +10,9 @@ import java.time.ZoneId
 import java.util.Calendar
 
 class AlarmSchedule(private val context: Context) {
+    companion object {
+        const val alarm_cont = "alarm cont"
+    }
 
     private var alarmManager: AlarmManager? = null
     private var alarmIntent: PendingIntent
@@ -21,27 +24,17 @@ class AlarmSchedule(private val context: Context) {
         }
     }
 
-        fun schedule(item: AlarmItem) {
-//            val calendar: Calendar = Calendar.getInstance().apply {
-//                timeInMillis = System.currentTimeMillis()
-//                set(Calendar.HOUR_OF_DAY, 11)
-//                set(Calendar.MINUTE, 35)
-//                set(Calendar.DAY_OF_WEEK, WEDNESDAY)
-//            }
-
-            // Set the alarm to start at 8:30 a.m.
+        fun scheduleEveryday(item: AlarmItem) {
             val calendar: Calendar = Calendar.getInstance().apply {
-                add(Calendar.SECOND, 3)
                 set(Calendar.HOUR_OF_DAY, item.time.split(" : ")[0].toInt())
                 set(Calendar.MINUTE, item.time.split(" : ")[1].toInt())
+                set(Calendar.SECOND, 0)
             }
 
-// setRepeating() lets you specify a precise custom interval--in this case,
-// 20 minutes.
             alarmManager?.setRepeating(
                 AlarmManager.RTC_WAKEUP,
                 calendar.timeInMillis,
-                1000 * 60 * 20,
+                24*60*60*1000,
                 alarmIntent
             )
             Log.d("Schedule", "schedule called")

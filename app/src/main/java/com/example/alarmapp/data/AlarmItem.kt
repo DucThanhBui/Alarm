@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey
 data class AlarmItem (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val time: String,
-    val sound: String,
-    val isVibrate: Boolean,
-    val isRepeat: String,
-    val deleteAfterTrigger: Boolean,
-    val content: String,
-    val isEnable: Boolean,
+    var time: String,
+    var sound: String,
+    var isVibrate: Boolean,
+    var isRepeat: String,
+    var deleteAfterTrigger: Boolean,
+    var content: String,
+    var isEnable: Boolean,
 )
