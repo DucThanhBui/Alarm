@@ -31,8 +31,15 @@
         <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtRubikregular20">
         <item name="android:textSize">@dimen/_20pxh</item>
+        <item name="android:textColor">@color/white_A700</item>
+        <item name="android:fontFamily">@font/rubik</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtRubikregular22w">
+        <item name="android:textSize">@dimen/_22pxh</item>
         <item name="android:textColor">@color/white_A700</item>
         <item name="android:fontFamily">@font/rubik</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>

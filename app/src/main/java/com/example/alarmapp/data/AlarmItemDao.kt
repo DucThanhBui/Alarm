@@ -25,4 +25,7 @@ interface AlarmItemDao {
 
     @Query("SELECT * from `Alarm Items` ORDER BY id ASC")
     fun getAllItems(): Flow<List<AlarmItem>>
+
+    @Query("SELECT EXISTS(SELECT * FROM `Alarm Items` WHERE id = :id)")
+    fun isRowIsExist(id : Int) : Boolean
 }

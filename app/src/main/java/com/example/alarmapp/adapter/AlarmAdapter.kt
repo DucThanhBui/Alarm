@@ -17,7 +17,8 @@ import com.example.alarmapp.databinding.AlarmItemBinding
 import kotlinx.coroutines.flow.collect
 
 class AlarmAdapter(
-    private val onItemClicked: (AlarmItem) -> Unit
+    private val onItemClicked: (AlarmItem) -> Unit,
+    private val onItemLongClicked: (AlarmItem) -> Boolean,
 ) : ListAdapter<AlarmItem, AlarmAdapter.AlarmViewHolder>(DiffCallback) {
 
     companion object {
@@ -54,6 +55,10 @@ class AlarmAdapter(
             onItemClicked(getItem(position))
         }
 
+        viewHolder.itemView.setOnLongClickListener {
+            val position = viewHolder.adapterPosition
+            onItemLongClicked(getItem(position))
+        }
         return viewHolder
     }
 

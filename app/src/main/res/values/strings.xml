@@ -5,6 +5,10 @@
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
 
+    <string name="alarm_delete">Xoa bao thuc nay</string>
+    <string name="alarm_delete_confp">Xac nhan</string>
+    <string name="alarm_delete_confn">Huy bo</string>
+
     <!-- Messages Preferences -->
     <string name="signature_title">Your signature</string>
     <string name="reply_title">Default reply action</string>
@@ -19,4 +23,12 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="one_time">Một lần</string>
+    <string name="repeat">Lặp lại</string>
+    <string name="default_v">Mặc định</string>
+    <string name="alarm_sound">Nhạc chuông</string>
+    <string name="vibrate_on_alarm">Rung khi báo thức</string>
+    <string name="delete_after_alarm_trigger">Xóa sau khi đã báo thức</string>
+    <string name="content">Nội dung</string>
+    <string name="alarm_setting">Cài đặt báo thức</string>
 </resources>

@@ -27,11 +27,11 @@
                     android:layout_height="?attr/actionBarSize">
 
                     <ImageButton
-                        android:layout_width="wrap_content"
+                        android:background="@color/gray_900"
+                        android:layout_width="50dp"
                         android:id="@+id/alarmSave"
                         android:layout_height="match_parent"
                         android:src="@drawable/baseline_check_24"
-                        android:backgroundTint="@color/design_default_color_on_primary"
                         android:layout_gravity="end" />
 
                     <LinearLayout
@@ -42,28 +42,21 @@
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
-                            android:textColor="@color/black"
+                            style="@style/txtRubikregular22w"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:text="@string/alarm_setting"
+                            android:textSize="30sp"
                             android:textAlignment="center"
-                            tools:text="Title" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/alarmItemStatus"
-                            android:textAlignment="center"
-                            tools:text="Tat"
-                            android:textSize="20sp" />
+                            tools:text="@string/alarm_setting" />
                     </LinearLayout>
 
                     <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/design_default_color_on_primary"
-                        android:src="@drawable/baseline_cancel_24"
+                        android:layout_width="50dp"
+                        android:background="@color/gray_900"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/baseline_close_24"
                         android:layout_gravity="start"
                         android:id="@+id/alarmCancel" />
                 </com.google.android.material.appbar.MaterialToolbar>
@@ -74,11 +67,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:timePickerMode="spinner"
+                android:theme="@style/time_picker_style"
                 android:id="@+id/time_picker_alarm" />
 
             <LinearLayout
                 android:id="@+id/alarmSoundContainer"
-                style="@style/groupStyle_901cornerRadius"
+                style="@style/groupStylegray_901cornerRadius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -88,27 +82,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nhac chuong"
-                    style="@style/txtRubikregular22"
+                    android:text="@string/alarm_sound"
+                    style="@style/txtRubikregular22w"
                     android:padding="@dimen/_10pxh"
                     android:layout_weight="1"
-                    tools:text="Nhac chuong" />
+                    tools:text="@string/alarm_sound" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    style="@style/txtRubikregular22"
+                    style="@style/txtRubikregular22w"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
                     android:id="@+id/alarmSound"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="@dimen/_10pxh"
-                    android:text="Mac dinh"
-                    tools:text="Mac dinh" />
+                    android:text="@string/default_v"
+                    tools:text="@string/default_v" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/alarmRepeatContainer"
-                style="@style/groupStyle_901cornerRadius"
+                style="@style/groupStylegray_901cornerRadius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -118,26 +112,27 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lap lai"
-                    style="@style/txtRubikregular22"
+                    android:text="@string/repeat"
+                    style="@style/txtRubikregular22w"
                     android:padding="@dimen/_10pxh"
                     android:layout_weight="1"
-                    tools:text="Lap lai" />
+                    tools:text="@string/repeat" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    style="@style/txtRubikregular22"
+                    style="@style/txtRubikregular22w"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
                     android:id="@+id/alarmRepeat"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="@dimen/_10pxh"
-                    tools:text="Mot lan" />
+                    tools:text="@string/one_time"
+                    android:text="@string/one_time"/>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/alarmVibrateContainer"
-                style="@style/groupStyle_901cornerRadius"
+                style="@style/groupStylegray_901cornerRadius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -145,27 +140,26 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Rung khi bao thuc"
-                    style="@style/txtRubikregular22"
+                    android:text="@string/vibrate_on_alarm"
+                    style="@style/txtRubikregular22w"
                     android:padding="@dimen/_10pxh"
                     android:layout_weight="1"
-                    tools:text="Rung khi bao thuc" />
+                    tools:text="@string/vibrate_on_alarm" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
                     android:layout_width="wrap_content"
                     app:thumbTint="@color/light_blue_900"
                     android:checked="true"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
                     android:id="@+id/alarmVibrateCheck"
                     android:paddingHorizontal="@dimen/_10pxh" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/alarmDeleteContainer"
-                style="@style/groupStyle_901cornerRadius"
+                style="@style/groupStylegray_901cornerRadius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -173,51 +167,51 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Rung khi bao thuc"
-                    style="@style/txtRubikregular22"
+                    android:text="@string/delete_after_alarm_trigger"
+                    style="@style/txtRubikregular22w"
                     android:padding="@dimen/_10pxh"
                     android:layout_weight="1"
-                    tools:text="Xoa sau khi da bao thuc" />
+                    tools:text="@string/delete_after_alarm_trigger" />
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
                     android:layout_width="wrap_content"
                     app:thumbTint="@color/light_blue_900"
                     android:checked="true"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
                     android:id="@+id/alarmDeleteCheck"
                     android:paddingHorizontal="@dimen/_10pxh" />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/alarmContentContainer"
-                style="@style/groupStyle_901cornerRadius"
+                style="@style/groupStylegray_901cornerRadius"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
                 android:layout_margin="@dimen/_7pxh"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Nhan"
-                    style="@style/txtRubikregular22"
-                    android:padding="@dimen/_10pxh"
+                    android:text="@string/content"
                     android:layout_weight="1"
-                    tools:text="Lap lai" />
+                    style="@style/txtRubikregular22w"
+                    android:padding="@dimen/_10pxh"
+                    tools:text="@string/content" />
 
-                <TextView
+                <EditText
                     android:layout_width="wrap_content"
-                    style="@style/txtRubikregular22"
+                    style="@style/txtRubikregular22w"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
                     android:id="@+id/alarmContent"
                     android:textAlignment="textEnd"
                     android:paddingHorizontal="@dimen/_10pxh"
-                    tools:text="Khong co nhan" />
+                    tools:text="Không có nhãn"
+                    android:minWidth="250dp"
+                    android:maxWidth="250dp"
+                    android:maxLines="3"/>
             </LinearLayout>
 
         </LinearLayout>

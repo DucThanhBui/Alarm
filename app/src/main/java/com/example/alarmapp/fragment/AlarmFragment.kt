@@ -17,9 +17,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alarmapp.AlarmApplication
 import com.example.alarmapp.R
 import com.example.alarmapp.adapter.AlarmAdapter
+import com.example.alarmapp.data.AlarmItem
 import com.example.alarmapp.databinding.FragmentAlarmBinding
 import com.example.alarmapp.viewmodel.ShareViewModel
 import com.example.alarmapp.viewmodel.ShareViewModelFactory
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
 class AlarmFragment : Fragment() {
@@ -52,10 +54,22 @@ class AlarmFragment : Fragment() {
         recycleView.layoutManager = LinearLayoutManager(requireContext())
 
 
+        val onAlarmClicked: (AlarmItem) -> Unit = {
+            val bundle = Bundle()
+            bundle.putString(ITEM_ID, it.id.toString())
+            view.findNavController().navigate(R.id.addAlarmFragment, bundle)
+        }
 
-        val alarmAdapter = AlarmAdapter {
-            val action = AlarmFragmentDirections.actionAlarmFragmentToAddAlarmFragment()
-            view.findNavController().navigate(action)
+        val alarmAdapter = AlarmAdapter(onAlarmClicked) {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(resources.getString(R.string.alarm_delete))
+                .setNegativeButton(resources.getString(R.string.alarm_delete_confn)) { _, _ ->
+                }
+                .setPositiveButton(resources.getString(R.string.alarm_delete_confp)) { _, _ ->
+                    viewModel.deleteItem(it)
+                }
+                .show()
+            true
         }
         recycleView.adapter = alarmAdapter
         lifecycle.coroutineScope.launch {
@@ -65,7 +79,7 @@ class AlarmFragment : Fragment() {
         }
 
         binding.btAddAlarm.setOnClickListener {
-           navController.navigate(R.id.action_alarmFragment_to_addAlarmFragment)
+           navController.navigate(R.id.addAlarmFragment)
         }
         binding.rvAlarmList.layoutManager = LinearLayoutManager(this.context)
     }
@@ -75,11 +89,7 @@ class AlarmFragment : Fragment() {
         _binding = null
     }
 
-    fun Fragment.findNavControllerSafely(id: Int): NavController? {
-        return if (findNavController().currentDestination?.id == id) {
-            findNavController()
-        } else {
-            null
-        }
+    companion object {
+        const val ITEM_ID = "id"
     }
 }

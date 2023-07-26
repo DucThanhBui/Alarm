@@ -19,9 +19,19 @@
 
         <TextClock
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:textSize="150sp"
-            tools:text="10:20"
+            android:layout_height="90dp"
+            android:format24Hour="HH:mm:ss"
+            android:format12Hour="hh:mm:ss a"
+            android:textSize="70sp"
+            tools:text="10:20:30 AM"
+            android:textAlignment="center"/>
+        <TextClock
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:format24Hour="EEEE, dd/MM/yyyy"
+            android:format12Hour="EEEE, dd/MM/yyyy"
+            android:textSize="35sp"
+            tools:text="Thu tu, 26/7/2023"
             android:textAlignment="center"/>
 
     </LinearLayout>

@@ -3,16 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/alarm_app_nav"
-    app:startDestination="@id/alarmFragment">
+    app:startDestination="@id/viewPagerFragment">
 
     <fragment
         android:id="@+id/alarmFragment"
         android:name="com.example.alarmapp.fragment.AlarmFragment"
-        android:label="AlarmFragment" >
-        <action
-            android:id="@+id/action_alarmFragment_to_addAlarmFragment"
-            app:destination="@id/addAlarmFragment" />
-    </fragment>
+        android:label="AlarmFragment" />
     <fragment
         android:id="@+id/stopWatchFragment"
         android:name="com.example.alarmapp.fragment.StopWatchFragment"
@@ -26,24 +22,10 @@
     <fragment
         android:id="@+id/viewPagerFragment"
         android:name="com.example.alarmapp.fragment.ViewPagerFragment"
-        android:label="ViewPagerFragment" >
-        <action
-            android:id="@+id/action_viewPagerFragment_to_alarmFragment"
-            app:destination="@id/alarmFragment" />
-        <action
-            android:id="@+id/action_viewPagerFragment_to_timerFragment"
-            app:destination="@id/timerFragment" />
-        <action
-            android:id="@+id/action_viewPagerFragment_to_stopWatchFragment"
-            app:destination="@id/stopWatchFragment" />
-    </fragment>
+        android:label="ViewPagerFragment" />
     <fragment
         android:id="@+id/addAlarmFragment"
         android:name="com.example.alarmapp.fragment.AddAlarmFragment"
         android:label="fragment_add_alarm"
-        tools:layout="@layout/fragment_add_alarm" >
-        <action
-            android:id="@+id/action_addAlarmFragment_to_alarmFragment"
-            app:destination="@id/alarmFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_add_alarm" />
 </navigation>
